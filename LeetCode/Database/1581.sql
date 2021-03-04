@@ -10,5 +10,5 @@ WHERE
   T.visit_id IS NULL
 GROUP BY
   V.customer_id
-order by
+ORDER BY
   count_no_trans DESC;
