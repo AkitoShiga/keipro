@@ -45,3 +45,20 @@ FROM
   temp2
 WHERE
   RNK = 1;
+
+WITH t AS
+  (
+    SELECT
+      seller_id,
+      SUM(price) AS sold
+    FROM
+      Sales
+    GROUP BY
+      seller_id
+  )
+SELECT
+  t.seller_id
+FROM
+  t
+WHERE
+  t.sold = (SELECT MAX(sold)FROM t)
