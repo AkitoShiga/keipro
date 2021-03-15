@@ -25,7 +25,7 @@ FROM
   LEFT JOIN
     ed
       ON strt.row = ed.row;
---corrected
+--corrected great submission
 select
   MIN(log_id) AS start_id
   ,MAX(log_id) AS end_id
