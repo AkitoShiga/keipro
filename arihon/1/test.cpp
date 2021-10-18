@@ -1,13 +1,28 @@
-#include <iostream>
-using std::cout;
-using std::cin;
+#include<algorithm>
+#include<iostream>
 
-int main()
-{
-  for(int row = 1; row <= 7; row++) {
-      for(int hash = 0; hash < (4 - abs(row -4)); hash++) {
-        cout << "#";
-      }
-    cout << "\n";
-  }
+using std::min;
+using std::max;
+
+int L, n;
+int x[] = {2, 6, 7};
+
+int main() {
+    L = 10;
+    n = 3;
+
+    int minT = 0;
+
+    for (int i = 0; i < n; i++) {
+        minT = max(minT, min(x[i], L - x[i]));
+    }
+
+    int maxT = 0;
+
+    for (int i = 0; i < n; i++) {
+        maxT = max(maxT, max(x[i], L -x[i]));
+    }
+
+    printf("%d %d\n", minT, maxT);
+
 }
