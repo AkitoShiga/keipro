@@ -2,11 +2,9 @@
 using namespace std;
 
 int main() {
-
     string s;
-
-    cin >> s;
-
-    cout << s << endl;
-
+    int n;
+    cin >> s >> n;
+    cout << s[n-1] << endl;
+    return 0;
 }

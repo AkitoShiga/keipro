@@ -1,7 +1,9 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main() {
-    cout << 27182 % 818 << endl;
-    return 0;
+    int x;
+    cin >> x;
+	cout << 24 - x << end;
+	return 0;
 }
