@@ -16,7 +16,7 @@ int main() {
         }
         */
 
-        if(S.substr(i, T.length()) == T)same = true;
+        if(S.substr(i, T.length)) == T)same = true;
 
         if(same){
             cout << "Yes" << endl;
