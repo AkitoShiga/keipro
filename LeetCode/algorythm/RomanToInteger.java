@@ -3,45 +3,25 @@ class Solution {
 
         int answer = 0;
         char[] romans  = s.toCharArray();
-        int[] romanInt = new int[romans.length];
-
-        for(int i = 0; i < romans.length; i++) {
-            switch (romans[i]) {
-                case 'I':
-                    romanInt[i] = 1;
-                    break;
-                case 'V':
-                    romanInt[i] = 5;
-                    break;
-                case 'X':
-                    romanInt[i] = 10;
-                    break;
-                case 'L':
-                    romanInt[i] = 50;
-                    break;
-                case 'C':
-                    romanInt[i] = 100;
-                    break;
-                case 'D':
-                    romanInt[i] = 500;
-                    break;
-                case 'M':
-                    romanInt[i] = 1000;
-                    break;
-                default:
-            }
-        }
-
+        Map<Character, Integer> romap = Map.of(
+                                                'I',1,
+                                                'V',5,
+                                                'X',10,
+                                                'L',50,
+                                                'C',100,
+                                                'D',500,
+                                                'M',1000
+                                            );
         for (int i = 0; i < romans.length-1; i++){
-            int firstValue  = romanInt[i];
-            int secondValue = romanInt[i+1];
+            int firstValue  = romap.get(romans[i]);
+            int secondValue = romap.get(romans[i+1]);
             if(firstValue < secondValue) {
                 answer -= firstValue;
             } else {
                 answer += firstValue;
             }
         }
-        answer += romanInt[romans.length-1];
+        answer += romap.get(romans[romans.length-1]);
         return answer;
     }
 }
